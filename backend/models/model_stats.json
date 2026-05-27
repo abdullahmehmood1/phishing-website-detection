@@ -1,0 +1,127 @@
+{
+  "model": "SoftVotingEnsemble_v2",
+  "accuracy": 1.0,
+  "f1_score": 1.0,
+  "roc_auc": 1.0,
+  "dataset_size": 24862,
+  "features_count": 27,
+  "feature_names": [
+    "url_length",
+    "domain_length",
+    "has_https",
+    "contains_ip",
+    "num_dots",
+    "num_hyphens",
+    "num_slashes",
+    "num_at_symbols",
+    "num_question_marks",
+    "num_equal_signs",
+    "num_digits",
+    "num_special_chars",
+    "suspicious_tld",
+    "subdomain_depth",
+    "path_depth",
+    "url_entropy",
+    "digit_letter_ratio",
+    "has_redirect",
+    "homograph_similarity",
+    "punycode_detected",
+    "zero_width_chars",
+    "tld_in_path",
+    "double_slash_redirect",
+    "shortening_service",
+    "domain_rank",
+    "tranco_rank_log",
+    "backlink_count_estimate"
+  ],
+  "training_date": "2026-05-12",
+  "per_model_results": {
+    "Logistic Regression": {
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "roc_auc": 1.0,
+      "confusion_matrix": [
+        [
+          2487,
+          0
+        ],
+        [
+          0,
+          2486
+        ]
+      ],
+      "train_time_s": 0.1
+    },
+    "Random Forest": {
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "roc_auc": 1.0,
+      "confusion_matrix": [
+        [
+          2487,
+          0
+        ],
+        [
+          0,
+          2486
+        ]
+      ],
+      "train_time_s": 1.1
+    },
+    "XGBoost": {
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "roc_auc": 1.0,
+      "confusion_matrix": [
+        [
+          2487,
+          0
+        ],
+        [
+          0,
+          2486
+        ]
+      ],
+      "train_time_s": 4.2
+    },
+    "SVM": {
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "roc_auc": 1.0,
+      "confusion_matrix": [
+        [
+          2487,
+          0
+        ],
+        [
+          0,
+          2486
+        ]
+      ],
+      "train_time_s": 18.0
+    },
+    "Ensemble (Voting)": {
+      "accuracy": 1.0,
+      "f1_score": 1.0,
+      "roc_auc": 1.0,
+      "confusion_matrix": [
+        [
+          2487,
+          0
+        ],
+        [
+          0,
+          2486
+        ]
+      ]
+    }
+  }
+}
