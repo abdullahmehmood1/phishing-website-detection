@@ -64,7 +64,9 @@ export default function App() {
       setHistory(savedHistory);
     } catch { setHistory([]); }
 
-    axios.get(`${API_BASE}/api/stats`).then(res => setStats(res.data)).catch(() => { });
+    axios.get(`${API_BASE}/api/stats`, {
+      headers: { 'Bypass-Tunnel-Reminder': 'true' }
+    }).then(res => setStats(res.data)).catch(() => { });
   }, []);
 
   const toggleTheme = () => {
@@ -95,7 +97,9 @@ export default function App() {
     setError('');
     setLoading(true);
     try {
-      const res = await axios.post(`${API_BASE}/api/detect`, { url: targetUrl, use_whois: false });
+      const res = await axios.post(`${API_BASE}/api/detect`, { url: targetUrl, use_whois: false }, {
+        headers: { 'Bypass-Tunnel-Reminder': 'true' }
+      });
       setResult(res.data);
       addToHistory(res.data);
       setTimeout(() => {
