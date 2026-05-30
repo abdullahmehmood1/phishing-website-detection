@@ -4,9 +4,9 @@
   "outputDirectory": "frontend/dist",
   "framework": null,
   "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
+    { "source": "/api/health", "destination": "/api/health" },
+    { "source": "/api/stats",  "destination": "/api/stats"  },
+    { "source": "/api/detect", "destination": "/api/detect" },
+    { "source": "/(.*)",       "destination": "/index.html" }
   ]
 }
