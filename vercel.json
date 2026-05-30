@@ -1,12 +1,30 @@
 {
   "version": 2,
-  "buildCommand": "cd frontend && npm install && npm run build",
-  "outputDirectory": "frontend/dist",
-  "framework": null,
-  "rewrites": [
-    { "source": "/api/health", "destination": "/api/health" },
-    { "source": "/api/stats",  "destination": "/api/stats"  },
-    { "source": "/api/detect", "destination": "/api/detect" },
-    { "source": "/(.*)",       "destination": "/index.html" }
+  "builds": [
+    {
+      "src": "frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    },
+    {
+      "src": "api/health.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "api/stats.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "api/detect.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    { "src": "/api/health", "dest": "/api/health.py" },
+    { "src": "/api/stats",  "dest": "/api/stats.py"  },
+    { "src": "/api/detect", "dest": "/api/detect.py" },
+    { "src": "/(.*)",       "dest": "/index.html"    }
   ]
 }
